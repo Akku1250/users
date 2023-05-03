@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Login from './Login';
-import UsersList from './UsersList';
-import { GrantAccess } from '../components';
-import AppLayout from '../components/AppLayout';
+import Login from './pages/Login';
+import UsersList from './pages/UsersList';
+import { GrantAccess } from './components';
+import AppLayout from './components/AppLayout';
 
 function App() {
   return (
