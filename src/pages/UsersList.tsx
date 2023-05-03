@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '../redux/store/hooks';
 import IUser from '../utils/interfaces/IUsers';
 import { getUsersList } from '../redux/thunks/getUsersList';
 import snackbar from '../utils/helpers/snackbar/snackbar';
-import IError from '../utils/services/interfaces/IError';
+import IError from '../utils/interfaces/IError';
 import { Flex, Grid, Img, Name, Wrapper } from '../components/styled';
 
 function UsersList() {

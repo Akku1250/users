@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import IUserLogin from '../../interfaces/IUserLogin';
+import IUserLogin from '../interfaces/IUserLogin';
 
 interface IProps {
   children?: React.ReactNode;

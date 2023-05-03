@@ -1,5 +1,5 @@
 import React from 'react';
-import { useUser } from '../utils/providers/Authentication/AuthenticationProvider';
+import { useUser } from '../utils/providers/AuthenticationProvider';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
 function GrantAccess() {

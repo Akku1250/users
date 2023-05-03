@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { post } from '../utils/services/AxiosService';
 import { AxiosResponse } from 'axios';
 import IUserLogin from '../utils/interfaces/IUserLogin';
-import { useUserUpdate } from '../utils/providers/Authentication/AuthenticationProvider';
+import { useUserUpdate } from '../utils/providers/AuthenticationProvider';
 import snackbar from '../utils/helpers/snackbar/snackbar';
-import IError from '../utils/services/interfaces/IError';
+import IError from '../utils/interfaces/IError';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Form, Input, Wrapper } from '../components/styled';
 
