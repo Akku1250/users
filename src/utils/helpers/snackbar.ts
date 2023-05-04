@@ -1,5 +1,5 @@
 import { OptionsObject, WithSnackbarProps, useSnackbar } from 'notistack';
-import INotification from '../../interfaces/INotification';
+import INotification from '../interfaces/INotification';
 import React from 'react';
 
 let useSnackbarRef: WithSnackbarProps;

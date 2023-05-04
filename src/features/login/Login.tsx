@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { post } from '../utils/services/AxiosService';
+import { post } from '../../utils/services/AxiosService';
 import { AxiosResponse } from 'axios';
-import IUserLogin from '../utils/interfaces/IUserLogin';
-import { useUserUpdate } from '../utils/providers/AuthenticationProvider';
-import snackbar from '../utils/helpers/snackbar/snackbar';
-import IError from '../utils/interfaces/IError';
+import IUserLogin from '../../utils/interfaces/IUserLogin';
+import { useUserUpdate } from '../../utils/providers/AuthenticationProvider';
+import snackbar from '../../utils/helpers/snackbar';
+import IError from '../../utils/interfaces/IError';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Form, Input, Wrapper } from '../components/styled';
+import './Login.scss';
 
 const Login = () => {
   const [email, setEmail] = useState<string>('');
@@ -53,13 +53,14 @@ const Login = () => {
   };
 
   return (
-    <Wrapper
-      setFlexDirectionColumn={true}
-      setAlignItemCenter={true}
-    >
-      <Form onSubmit={handleSubmit}>
+    <div className="login-container">
+      <form
+        className="form"
+        onSubmit={handleSubmit}
+      >
         <label htmlFor="email">Email</label>
-        <Input
+        <input
+          className="input email-mb"
           type="email"
           id="email"
           onChange={handleEmail}
@@ -69,17 +70,17 @@ const Login = () => {
         />
 
         <label htmlFor="password">Password</label>
-        <Input
+        <input
+          className="input password-mb"
           type="password"
           id="password"
           onChange={handlePassword}
           autoComplete="false"
           value={password}
-          isPasswordInput={true}
         />
         <button>Login</button>
-      </Form>
-    </Wrapper>
+      </form>
+    </div>
   );
 };
 

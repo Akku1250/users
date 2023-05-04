@@ -1,6 +1,6 @@
 import { SnackbarProvider } from 'notistack';
 import React, { useRef } from 'react';
-import { SnackbarUtilsConfigurator } from '../helpers/snackbar/snackbar';
+import { SnackbarUtilsConfigurator } from '../helpers/snackbar';
 import Button from '../../components/styled/button.styled';
 
 interface IProps {

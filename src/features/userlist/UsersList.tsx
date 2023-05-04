@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../redux/store/hooks';
-import IUser from '../utils/interfaces/IUsers';
-import { getUsersList } from '../redux/thunks/getUsersList';
-import snackbar from '../utils/helpers/snackbar/snackbar';
-import IError from '../utils/interfaces/IError';
-import { Flex, Grid, Img, Name, Wrapper } from '../components/styled';
+import { useAppDispatch, useAppSelector } from '../../redux/store/hooks';
+import IUser from '../../utils/interfaces/IUsers';
+import { getUsersList } from '../../redux/thunks/getUsersList';
+import snackbar from '../../utils/helpers/snackbar';
+import IError from '../../utils/interfaces/IError';
+import './UsersList.scss';
 
 function UsersList() {
   const users: IUser[] | null = useAppSelector((state) => state.userList.users);
@@ -32,36 +32,40 @@ function UsersList() {
   });
 
   return (
-    <Wrapper>
+    <div className="userlist-container">
       {users === null ? (
         <p>loading...</p>
       ) : (
-        <Grid>
+        <div className="grid">
           {users.map((user) => {
             return (
-              <Flex key={user.id}>
+              <div
+                className="userItem-container"
+                key={user.id}
+              >
                 <div>
                   {
                     // eslint-disable-next-line jsx-a11y/img-redundant-alt
-                    <Img
+                    <img
+                      className="img-size"
                       src={`${user.avatar}`}
                       alt={`${user.first_name} ${user.last_name} image`}
                     />
                   }
                 </div>
                 <div>
-                  <Name>{`${user.first_name} ${user.last_name}`}</Name>
+                  <p className="name">{`${user.first_name} ${user.last_name}`}</p>
                   {
                     // eslint-disable-next-line jsx-a11y/anchor-is-valid
                     <a href="#">{`${user.email}`}</a>
                   }
                 </div>
-              </Flex>
+              </div>
             );
           })}
-        </Grid>
+        </div>
       )}
-    </Wrapper>
+    </div>
   );
 }
 
